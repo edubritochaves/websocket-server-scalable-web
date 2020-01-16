@@ -22,7 +22,7 @@ How to create a WebSocket Server Scalable with SpringBoot and Stomp
 
 # How to use
 1. After the start, check if the server is up.
-
+```
 11:48:57,657 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 65) WFLYUT0021: Registered web context: /ws-server
 11:48:57,698 INFO  [org.jboss.as.server] (ServerService Thread Pool -- 34) WFLYSRV0010: Deployed "ws-server.war" (runtime-name : "ws-server.war")
 11:48:57,984 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0060: Http management interface listening on http://127.0.0.1:9990/management
@@ -32,15 +32,16 @@ How to create a WebSocket Server Scalable with SpringBoot and Stomp
 11:48:59,640 INFO  [org.springframework.web.servlet.DispatcherServlet] (default task-2) Initializing Servlet 'dispatcherServlet'
 11:48:59,669 INFO  [org.springframework.web.servlet.DispatcherServlet] (default task-2) Completed initialization in 28 ms
 11:48:59,930 INFO  [com.chavessummer.websocket.service.WebSocketStompSessionHandler] (default task-6) afterConnected
-
+```
 2. Open address http://localhost:8080/ws-server/ws-client
 ![client](https://github.com/edubritochaves/websocket-server-scalable-web/blob/master/repo/client.png)
 
 3. Type a topic name for this client, click in "Connect" button and after click in "Subscribe".
 4. Send a message for API Rest by Postman or anything tool.
+```
 curl --location --request POST 'http://localhost:8080/ws-server/api' \
 --header 'Content-Type: application/json' \
 --data-raw '{"topic":"/topic/hello", "data":"Teste WebSocket Scalable"}'
-
+```
 5. To test the scability you should have two or more servers in differents ports or in different machines.
 6. It's possible to test without a NGINX, for this, connect each client in your own server. 
