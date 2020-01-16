@@ -1,0 +1,18 @@
+server:
+  ssl:
+    enabled: false
+    key-store-type: PKCS12
+    key-store: classpath:openssl.jks
+    key-store-password: password
+    key-alias: dn
+spring:
+  jackson:
+    default-property-inclusion: non-null
+    deserialization:
+      adjust-dates-to-context-time-zone: false
+      use-big-decimal-for-floats: true
+ws-notify:
+  web-socket:
+    master-url: http://localhost:8080/ws-server/notif
+    initial-connect: 5000
+    retry-timeout: 120000

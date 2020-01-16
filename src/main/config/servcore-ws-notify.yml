@@ -1,0 +1,10 @@
+spring:
+  jackson:
+    default-property-inclusion: non-null
+    deserialization:
+      adjust-dates-to-context-time-zone: false
+      use-big-decimal-for-floats: true
+ws-notify:
+  web-socket:
+    master-url: http://localhost:8080/ws-notify/notif
+    retry-timeout: 5000
