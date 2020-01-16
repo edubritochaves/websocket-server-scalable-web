@@ -1,9 +1,10 @@
-# websocket-server-scalable-web
+# websocket-server-scalable-web (1.0)
 How to create a WebSocket Server Scalable with SpringBoot and Stomp
 
 # Requiriments:
-JDK 1.8
-Wildfly 10.1
+1. JDK 1.8
+2. Wildfly 10.1
+3. Apache Maven
 
  ![arch](https://github.com/edubritochaves/websocket-server-scalable-web/blob/master/repo/arch.png)
  
@@ -36,4 +37,10 @@ Wildfly 10.1
 ![client](https://github.com/edubritochaves/websocket-server-scalable-web/blob/master/repo/client.png)
 
 3. Type a topic name for this client, click in "Connect" button and after click in "Subscribe".
+4. Send a message for API Rest by Postman or anything tool.
+curl --location --request POST 'http://localhost:8080/ws-server/api' \
+--header 'Content-Type: application/json' \
+--data-raw '{"topic":"/topic/hello", "data":"Teste WebSocket Scalable"}'
 
+5. To test the scability you should have two or more servers in differents ports or in different machines.
+6. It's possible to test without a NGINX, for this, connect each client in your own server. 
